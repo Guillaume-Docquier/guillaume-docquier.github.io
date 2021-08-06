@@ -23,8 +23,8 @@ const initProfessionSettings = value => {
     }, {});
 }
 
-export const CrafterConfiguration = ({ onConfigurationChanged }) => {
-    const [configuration, setConfiguration] = useState(initProfessionSettings(NONE));
+export const CrafterConfiguration = ({ defaultConfiguration, onConfigurationChanged }) => {
+    const [configuration, setConfiguration] = useState(defaultConfiguration || initProfessionSettings(NONE));
 
     const handleProfessionSettingChanged = (profession, newProfessionSetting) => {
         const newConfiguration = { ...configuration };
